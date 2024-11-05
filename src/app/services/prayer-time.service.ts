@@ -20,7 +20,7 @@ interface PrayerTimesResponse {
   providedIn: 'root',
 })
 export class PrayerTimeService {
-  private apiUrl = 'http://api.aladhan.com/v1/timings';
+  private apiUrl = 'https://api.aladhan.com/v1/timings';
 
   constructor(private http: HttpClient) {}
 
