@@ -1,3 +1,8 @@
 import { Routes } from '@angular/router';
+import { PrayerTimesComponent } from './components/prayer-times/prayer-times.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+//     { path: '', redirectTo: '/home', pathMatch: 'full' },  // Optional home route
+  { path: 'prayer-times', component: PrayerTimesComponent },
+//   { path: '**', redirectTo: '/home' }  // Optional wildcard route for unknown paths
+];

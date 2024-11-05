@@ -1,0 +1,52 @@
+<!-- <div *ngIf="prayerTimes">
+    <h3>Prayer Times</h3>
+    <ul>
+      <li>Fajr: {{ prayerTimes['Fajr'] }}</li>
+      <li>Sunrise: {{ prayerTimes['Sunrise'] }}</li>
+
+      <li>Dhuhr: {{ prayerTimes['Dhuhr'] }}</li>
+      <li>Asr: {{ prayerTimes['Asr'] }}</li>
+      <li>Maghrib: {{ prayerTimes['Maghrib'] }}</li>
+      <li>Isha: {{ prayerTimes['Isha'] }}</li>
+    </ul>
+  </div>
+  <div *ngIf="!prayerTimes">
+    Loading prayer times...
+  </div>
+   -->
+
+   <!-- prayer-times.component.html -->
+<div class="prayer-times-container">
+    <!-- Background Image -->
+    <div class="background-image">
+      <img [src]="imageUrl" alt="Kaaba Background">
+    </div>
+  
+    <!-- Main Clock Section -->
+    <div class="clock-section">
+      <div class="time-display">
+        <h1>{{ currentTime | date: 'hh:mm a' }}</h1>
+        <p>Next Iqama in {{ nextPrayerCountdown }} min</p>
+      </div>
+    </div>
+  
+    <!-- Prayer Times List -->
+    <div class="prayer-times-list">
+      <div *ngFor="let prayer of prayerTimes" class="prayer-time">
+        <h4>{{ prayer.name }}</h4>
+        <p>{{ prayer.time }}</p>
+      </div>
+    </div>
+  
+    <!-- Settings and Quran Links -->
+    <div class="sidebar-links">
+      <button (click)="openQuran()">Quran</button>
+      <button (click)="openSettings()">Settings</button>
+    </div>
+  
+    <!-- Date Display -->
+    <div class="date-display">
+      <p>{{ currentDate | date: 'dd MMMM yyyy' }}</p>
+    </div>
+  </div>
+  
